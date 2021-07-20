@@ -6,12 +6,12 @@ from flask import Flask, Response
 app = Flask(__name__)
 
 
-def cities_import() -> List[Dict] :
+def cities_import() -> List[Dict]:
     config = {
         'user': 'root',
         'password': 'root',
         'host': 'db',
-        'port': '3306'
+        'port': '3306',
         'database': 'citiesData'
     }
     connection = mysql.connector.connect(**config)
@@ -33,5 +33,5 @@ def index() -> str:
     return resp
 
 
-if__name__== '__main__':
+if __name__ == '__main__':
     app.run(host='0.0.0.0')
